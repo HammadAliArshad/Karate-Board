@@ -1,0 +1,51 @@
+// .navbar{
+//     height: 50px;
+// }
+.logo {
+  height: 100px;
+  width: 120px;
+  margin-left: 50px;
+  margin-top: 40px;
+}
+
+#main{
+    position: relative;
+}
+
+// #link{
+//     margin-left: 100px;
+// }
+
+// .nav-item{
+//     margin-left: 50px;
+// }
+
+#float {
+  position: absolute;
+}
+li {
+  list-style-type: none;
+  margin-top: 100px;
+  margin-left: 20px;
+  background-color: rgb(137, 4, 3);
+  width: 105px;
+  padding: 8px;
+  border-radius: 10px;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+li:hover {
+  animation: mymove 1.3s infinite;
+}
+
+@keyframes mymove {
+  from {
+    background-color: rgb(137, 4, 3);
+}
+  to {
+    background-color: rgb(178, 31, 46);
+  }
+}
