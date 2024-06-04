@@ -1,1 +1,27 @@
-<p>match-stats works!</p>
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Player Name (Aka)</th>
+        <th scope="col">Score (Aka)</th>
+        <th scope="col">Player Name (Ao)</th>
+        <th scope="col">Score (Ao)</th>
+        <th scope="col">Winner</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+        <td>{{ player.id }}</td>
+        <td>{{ player.playerNameAka }}</td>
+        <td>{{ player.scoreAka }}</td>
+        <td>{{ player.playerNameAo }}</td>
+        <td>{{ player.scoreAo }}</td>
+        <td *ngIf="('scoreAka' > 'scoreAo')">{{ player.playerNameAka }}</td>
+        <td *ngIf="('scoreAo' > 'scoreAka')">{{ player.playerNameAo }}</td>
+        <td><button>delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

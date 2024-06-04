@@ -1,0 +1,13 @@
+.table-container {
+  width: 70%;
+  margin: 0 auto; /* Center the table horizontally */
+  padding: 2rem; /* Equal margin from all sides */
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-top: 100px;
+}
+
+td, th{
+    background-color: transparent;
+    color: white;
+}
+

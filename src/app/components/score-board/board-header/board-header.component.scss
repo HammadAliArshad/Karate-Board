@@ -1,0 +1,97 @@
+.red-section {
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+.blue-section {
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
+
+.container .col-9 {
+  width: 75%;
+}
+
+.red-section,
+.blue-section {
+  height: 450px; /* Adjust the height as needed */
+}
+
+.pscore {
+  font-size: 100px;
+}
+
+.count-down {
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 70px;
+  color: white;
+}
+
+#stopwatch {
+  position: absolute;
+}
+
+.match-time {
+  margin-top: 300px;
+  color: white;
+}
+
+.match-time > button {
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(114, 6, 6);
+  margin: 1px;
+  width: 30px;
+  color: white;
+}
+
+.c1 {
+  border: 0;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+}
+
+.c2 {
+  border: 0;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+}
+
+span {
+  border: 1px solid;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.footer {
+  position: absolute;
+  margin-top: 405px;
+
+  .left-btn{
+    margin-right: 200px;
+  }
+
+  .right-btn{
+    margin-left: 200px;
+  }
+
+  button {
+    border: none;
+    border-radius: 5px;
+    margin: 2px;
+    width: 100px;
+    
+  }
+}
+
+
+

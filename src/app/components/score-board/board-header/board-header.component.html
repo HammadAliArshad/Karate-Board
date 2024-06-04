@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-9 d-flex justify-content-center">
+      <div class="red-section w-50">
+        <h1 class="pscore">{{ score }}</h1>
+        <section class="panelty mt-5">
+          <button class="c1">C1</button>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </section>
+        <section class="panelty mt-4">
+          <button class="c1">C2</button>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </section>
+        <section class="score">
+          <button class="btn btn-link m-1 mt-4">Yuku</button>
+          <button class="btn btn-link m-1 mt-4">Wazari</button>
+          <button class="btn btn-link m-1 mt-4">Ippon</button>
+        </section>
+      </div>
+      <div id="stopwatch" class="col-9 d-flex justify-content-center">
+        <countdown
+          class="mt-2"
+          style="font-weight: bolder"
+          #cd
+          [config]="{ leftTime: matchTime, demand: true, format: 'm:ss' }"
+        ></countdown>
+        <section class="match-time">
+          <p style="margin-left: 5px">Match Time</p>
+          <button (click)="setNinty()">90</button>
+          <button (click)="setTwo()">2</button>
+          <button (click)="setThree()">3</button>
+        </section>
+      </div>
+
+      <div class="blue-section w-50">
+        <h1 class="pscore">{{ score }}</h1>
+        <section class="panelty mt-5">
+          <button class="c2">C1</button>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </section>
+        <section class="panelty mt-4">
+          <button class="c2">C1</button>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </section>
+        <section class="score">
+          <button class="btn btn-link m-1 mt-4">Yuku</button>
+          <button class="btn btn-link m-1 mt-4">Wazari</button>
+          <button class="btn btn-link m-1 mt-4">Ippon</button>
+        </section>
+      </div>
+      <section class="footer d-flex">
+        <div class="left-btn">
+          <button class="btn btn-dark" [routerLink]="['']" >Back</button>
+        </div>
+        <div class="center-btns mx-auto">
+          <button class="btn btn-success" (click)="cd.begin()">Hajime</button>
+          <button class="btn btn-success" (click)="cd.pause()">Matte</button>
+        </div>
+        <div class="right-btn">
+          <button class="btn btn-secondary" (click)="cd.restart()">Reset</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
