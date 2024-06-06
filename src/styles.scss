@@ -2,3 +2,8 @@
 *{
     overflow: hidden;
 }
+
+input[type="text"] {
+  background-color: transparent !important;
+  color: white !important;
+}

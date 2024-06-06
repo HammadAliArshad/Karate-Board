@@ -1,29 +1,63 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-9 d-flex justify-content-center">
-      <div class="red-section w-50">
-        <h1 class="pscore">{{ score }}</h1>
+      <div class="aka-section w-50">
+        <h1 class="playerScore">{{ scoreAka }}</h1>
         <section class="panelty mt-5">
-          <button class="c1">C1</button>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+          <button class="categoryAka" (click)="categoryOneAka()">C1</button>
+          <span
+            ><i *ngIf="akaCategoryOne >= 1" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="akaCategoryOne >= 2" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="akaCategoryOne >= 3" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="akaCategoryOne >= 4" class="material-icons">&#xe876;</i>
+          </span>
         </section>
         <section class="panelty mt-4">
-          <button class="c1">C2</button>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+          <button class="categoryAka" (click)="categoryTwoAka()">C2</button>
+          <span
+            ><i *ngIf="akaCategoryTwo >= 1" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="akaCategoryTwo >= 2" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="akaCategoryTwo >= 3" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="akaCategoryTwo >= 4" class="material-icons">&#xe876;</i>
+          </span>
         </section>
         <section class="score">
-          <button class="btn btn-link m-1 mt-4">Yuku</button>
-          <button class="btn btn-link m-1 mt-4">Wazari</button>
-          <button class="btn btn-link m-1 mt-4">Ippon</button>
+          <button
+            class="btn btn-primary m-1 mt-4"
+            style="background-color: #1e90ff"
+            (click)="akaScore(1)"
+          >
+            Yuku
+          </button>
+          <button
+            class="btn btn-primary m-1 mt-4"
+            style="background-color: #ffd700"
+            (click)="akaScore(2)"
+          >
+            Wazari
+          </button>
+          <button
+            class="btn btn-primary m-1 mt-4"
+            style="background-color: #ff4500"
+            (click)="akaScore(3)"
+          >
+            Ippon
+          </button>
         </section>
       </div>
-      <div id="stopwatch" class="col-9 d-flex justify-content-center">
+      <div id="stopwatch" class="d-flex justify-content-center">
         <countdown
           class="mt-2"
           style="font-weight: bolder"
@@ -32,44 +66,96 @@
         ></countdown>
         <section class="match-time">
           <p style="margin-left: 5px">Match Time</p>
-          <button (click)="setNinty()">90</button>
-          <button (click)="setTwo()">2</button>
-          <button (click)="setThree()">3</button>
+          <button (click)="setTime(90)">90</button>
+          <button (click)="setTime(120)">2</button>
+          <button (click)="setTime(180)">3</button>
         </section>
       </div>
 
-      <div class="blue-section w-50">
-        <h1 class="pscore">{{ score }}</h1>
+      <div class="ao-section w-50">
+        <h1 class="playerScore">{{ scoreAo }}</h1>
         <section class="panelty mt-5">
-          <button class="c2">C1</button>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+          <button class="categoryAo" (click)="categoryOneAo()">C1</button>
+          <span
+            ><i *ngIf="aoCategoryOne >= 1" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="aoCategoryOne >= 2" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="aoCategoryOne >= 3" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="aoCategoryOne >= 4" class="material-icons">&#xe876;</i>
+          </span>
         </section>
         <section class="panelty mt-4">
-          <button class="c2">C1</button>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+          <button class="categoryAo" (click)="categoryTwoAo()">C1</button>
+          <span
+            ><i *ngIf="aoCategoryTwo >= 1" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="aoCategoryTwo >= 2" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="aoCategoryTwo >= 3" class="material-icons">&#xe876;</i>
+          </span>
+          <span
+            ><i *ngIf="aoCategoryTwo >= 4" class="material-icons">&#xe876;</i>
+          </span>
         </section>
         <section class="score">
-          <button class="btn btn-link m-1 mt-4">Yuku</button>
-          <button class="btn btn-link m-1 mt-4">Wazari</button>
-          <button class="btn btn-link m-1 mt-4">Ippon</button>
+          <button
+            class="btn btn-primary m-1 mt-4"
+            style="background-color: #1e90ff"
+            (click)="aoScore(1)"
+          >
+            Yuku
+          </button>
+          <button
+            class="btn btn-primary m-1 mt-4"
+            style="background-color: #ffd700"
+            (click)="aoScore(2)"
+          >
+            Wazari
+          </button>
+          <button
+            class="btn btn-primary m-1 mt-4"
+            style="background-color: #ff4500"
+            (click)="aoScore(3)"
+          >
+            Ippon
+          </button>
         </section>
       </div>
       <section class="footer d-flex">
         <div class="left-btn">
-          <button class="btn btn-dark" [routerLink]="['']" >Back</button>
+          <button class="btn btn-dark" [routerLink]="['']">Back</button>
         </div>
         <div class="center-btns mx-auto">
-          <button class="btn btn-success" (click)="cd.begin()">Hajime</button>
-          <button class="btn btn-success" (click)="cd.pause()">Matte</button>
+          <button
+            class="btn btn-dark"
+            style="background-color: #32cd32"
+            (click)="cd.begin()"
+          >
+            Hajime
+          </button>
+          <button
+            class="btn btn-success"
+            style="background-color: #ffd700"
+            (click)="cd.pause()"
+          >
+            Matte
+          </button>
         </div>
         <div class="right-btn">
-          <button class="btn btn-secondary" (click)="cd.restart()">Reset</button>
+          <button
+            class="btn btn-secondary"
+            style="background-color: #ffa500"
+            (click)="cd.restart()"
+          >
+            Reset
+          </button>
         </div>
       </section>
     </div>

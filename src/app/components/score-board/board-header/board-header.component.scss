@@ -1,11 +1,11 @@
-.red-section {
-  background-color: red;
+.aka-section {
+  background-color: #8b0000;
   color: white;
   text-align: center;
 }
 
-.blue-section {
-  background-color: blue;
+.ao-section {
+  background-color: #00008b;
   color: white;
   text-align: center;
 }
@@ -14,12 +14,12 @@
   width: 75%;
 }
 
-.red-section,
-.blue-section {
+.aka-section,
+.ao-section {
   height: 450px; /* Adjust the height as needed */
 }
 
-.pscore {
+.playerScore {
   font-size: 100px;
 }
 
@@ -33,6 +33,7 @@
 
 #stopwatch {
   position: absolute;
+  width: 150px;
 }
 
 .match-time {
@@ -43,44 +44,53 @@
 .match-time > button {
   border: 0;
   border-radius: 5px;
-  background-color: rgb(114, 6, 6);
+  background-color: rgb(59, 3, 3);
   margin: 1px;
   width: 30px;
   color: white;
 }
 
-.c1 {
+.categoryAka {
   border: 0;
   padding: 8px;
   border-radius: 5px;
-  background-color: blue;
+  background-color: #00008b;
   color: white;
+
+
 }
 
-.c2 {
+.categoryAo {
   border: 0;
   padding: 8px;
   border-radius: 5px;
-  background-color: red;
+  background-color: #8b0000;
   color: white;
+
 }
 
 span {
-  border: 1px solid;
-  border-radius: 10px;
-  margin: 20px;
-  padding: 10px;
+  margin-right: 40px;
+  padding: 20px;
+
+  i{
+    position: fixed;
+  }
+}
+
+.score > button {
+  border: none;
 }
 
 .footer {
   position: absolute;
   margin-top: 405px;
 
-  .left-btn{
+  .left-btn {
     margin-right: 200px;
   }
 
-  .right-btn{
+  .right-btn {
     margin-left: 200px;
   }
 
@@ -89,9 +99,21 @@ span {
     border-radius: 5px;
     margin: 2px;
     width: 100px;
-    
   }
 }
 
 
+// span{
+//   animation: easeOutAnimation 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+// }
+// @keyframes easeOutAnimation {
+//   0% {
+//     transform: translateX(0);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translateX(100px); /* Adjust this value as needed */
+//     opacity: 2;
+//   }
+// }
 
