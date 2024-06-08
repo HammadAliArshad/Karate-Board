@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 export class MatchStatsComponent {
   players = [
     {
-      id: 1,
+      number: 1,
       playerNameAka: 'John Doe',
       scoreAka: 50,
       playerNameAo: 'Jane Smith',
@@ -19,7 +19,7 @@ export class MatchStatsComponent {
       winner: ''
     },
     {
-      id: 2,
+      number: 2,
       playerNameAka: 'Alice Brown',
       scoreAka: 30,
       playerNameAo: 'Bob Johnson',
@@ -27,7 +27,7 @@ export class MatchStatsComponent {
       winner: '',
     },
     {
-      id: 3,
+      number: 3,
       playerNameAka: 'Michael White',
       scoreAka: 70,
       playerNameAo: 'Emily Davis',

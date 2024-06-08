@@ -3,7 +3,15 @@
     <div class="col-9 d-flex justify-content-center">
       <div class="aka-section w-50">
         <h1 class="playerScore">{{ scoreAka }}</h1>
-        <section class="panelty mt-5">
+        <button
+          class="btn btn-dark"
+          [ngStyle]="{ color: '#00008b' }"
+          *ngIf="scoreAka >= 1"
+          (click)="akaScoreMinus()"
+        >
+          <i class="material-icons">redo</i>
+        </button>
+        <section class="panelty" [ngClass]="scoreAka === 0 ? 'mt-5' : 'mt-0'">
           <button class="categoryAka" (click)="categoryOneAka()">C1</button>
           <span
             ><i *ngIf="akaCategoryOne >= 1" class="material-icons">&#xe876;</i>
@@ -18,6 +26,16 @@
             ><i *ngIf="akaCategoryOne >= 4" class="material-icons">&#xe876;</i>
           </span>
         </section>
+
+        <button
+          (click)="resetPaneltyAka()"
+          class="resetPanelty"
+          style="color: #00008b"
+          *ngIf="akaCategoryOne >= 1 || akaCategoryTwo >= 1"
+        >
+          <i class="material-icons">repeat</i>
+        </button>
+
         <section class="panelty mt-4">
           <button class="categoryAka" (click)="categoryTwoAka()">C2</button>
           <span
@@ -41,6 +59,9 @@
           >
             Yuku
           </button>
+          <!-- <button *ngIf="scoreAka >= 1" class="btn btn-dark mt-4">
+            <i class="material-icons">remove</i>
+          </button> -->
           <button
             class="btn btn-primary m-1 mt-4"
             style="background-color: #ffd700"
@@ -74,7 +95,15 @@
 
       <div class="ao-section w-50">
         <h1 class="playerScore">{{ scoreAo }}</h1>
-        <section class="panelty mt-5">
+        <button
+          class="btn btn-dark"
+          [ngStyle]="{ color: '#8b0000' }"
+          *ngIf="scoreAo >= 1"
+          (click)="aoScoreMinus()"
+        >
+          <i class="material-icons">undo</i>
+        </button>
+        <section class="panelty" [ngClass]="scoreAo === 0 ? 'mt-5' : 'mt-0'">
           <button class="categoryAo" (click)="categoryOneAo()">C1</button>
           <span
             ><i *ngIf="aoCategoryOne >= 1" class="material-icons">&#xe876;</i>
@@ -89,8 +118,18 @@
             ><i *ngIf="aoCategoryOne >= 4" class="material-icons">&#xe876;</i>
           </span>
         </section>
+
+        <button
+          (click)="resetPaneltyAo()"
+          class="resetPanelty"
+          style="color: #8b0000"
+          *ngIf="aoCategoryOne >= 1 || aoCategoryTwo >= 1"
+        >
+          <i class="material-icons">repeat</i>
+        </button>
+
         <section class="panelty mt-4">
-          <button class="categoryAo" (click)="categoryTwoAo()">C1</button>
+          <button class="categoryAo" (click)="categoryTwoAo()">C2</button>
           <span
             ><i *ngIf="aoCategoryTwo >= 1" class="material-icons">&#xe876;</i>
           </span>
@@ -130,7 +169,7 @@
       </div>
       <section class="footer d-flex">
         <div class="left-btn">
-          <button class="btn btn-dark" [routerLink]="['']">Back</button>
+          <button class="btn btn-secondary" [routerLink]="['']">Back</button>
         </div>
         <div class="center-btns mx-auto">
           <button

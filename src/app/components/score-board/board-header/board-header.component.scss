@@ -102,18 +102,21 @@ span {
   }
 }
 
+.resetPanelty{
+  border: none;
+  position: absolute;
+  margin-left: 140px;
+  background-color: transparent;
+}
 
-// span{
-//   animation: easeOutAnimation 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-// }
-// @keyframes easeOutAnimation {
-//   0% {
-//     transform: translateX(0);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: translateX(100px); /* Adjust this value as needed */
-//     opacity: 2;
-//   }
-// }
+.btn-dark{
+  background-color: transparent;
+  padding: 5px;
+  justify-content: center;
+  border: none;
+}
+
+.btn-dark:focus{
+  background-color: transparent;
+}
 

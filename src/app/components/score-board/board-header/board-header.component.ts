@@ -1,12 +1,13 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CountdownModule } from 'ngx-countdown';
 
 @Component({
   selector: 'app-board-header',
   standalone: true,
-  imports: [CountdownModule, RouterLink, NgIf, NgClass],
+  imports: [CountdownModule, RouterLink, NgIf, NgClass, NgStyle],
   templateUrl: './board-header.component.html',
   styleUrl: './board-header.component.scss',
 })
@@ -56,5 +57,22 @@ export class BoardHeaderComponent {
     if (this.aoCategoryTwo > 4) {
       this.aoCategoryTwo -= this.aoCategoryTwo;
     }
+  }
+
+  resetPaneltyAka() {
+    this.akaCategoryOne -= this.akaCategoryOne;
+    this.akaCategoryTwo -= this.akaCategoryTwo;
+  }
+  resetPaneltyAo() {
+    this.aoCategoryOne -= this.aoCategoryOne;
+    this.aoCategoryTwo -= this.aoCategoryTwo;
+  }
+
+  akaScoreMinus() {
+    this.scoreAka -= this.scoreAka;
+  }
+
+  aoScoreMinus(){
+    this.scoreAo -= this.scoreAo;
   }
 }

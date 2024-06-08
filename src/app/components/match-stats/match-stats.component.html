@@ -13,14 +13,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let player of players">
-        <td>{{ player.id }}</td>
+        <td>{{ player.number }}</td>
         <td>{{ player.playerNameAka }}</td>
         <td>{{ player.scoreAka }}</td>
         <td>{{ player.playerNameAo }}</td>
         <td>{{ player.scoreAo }}</td>
         <td *ngIf="('scoreAka' > 'scoreAo')">{{ player.playerNameAka }}</td>
         <td *ngIf="('scoreAo' > 'scoreAka')">{{ player.playerNameAo }}</td>
-        <td><button>delete</button></td>
+        <td><button class="delete"><i class="material-icons">delete</i></button></td>
       </tr>
     </tbody>
   </table>
