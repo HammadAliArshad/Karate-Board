@@ -13,3 +13,14 @@ span{
 .center{
     margin-top: 60px;
 }
+
+@keyframes scoreBoard{
+  from{width: 50%;}
+  to{width: 100%;}
+}
+
+.center{
+  animation: scoreBoard 1s;
+}
+
+

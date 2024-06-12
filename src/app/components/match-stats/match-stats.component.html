@@ -18,10 +18,18 @@
         <td>{{ player.scoreAka }}</td>
         <td>{{ player.playerNameAo }}</td>
         <td>{{ player.scoreAo }}</td>
-        <td *ngIf="('scoreAka' > 'scoreAo')">{{ player.playerNameAka }}</td>
-        <td *ngIf="('scoreAo' > 'scoreAka')">{{ player.playerNameAo }}</td>
-        <td><button class="delete"><i class="material-icons">delete</i></button></td>
+        <td *ngIf="player.scoreAka > player.scoreAo">
+          {{ player.playerNameAka }}
+        </td>
+        <td *ngIf="player.scoreAka < player.scoreAo">
+          {{ player.playerNameAo }}
+        </td>
+        <td>
+          <button class="delete"><i class="material-icons">delete</i></button>
+        </td>
       </tr>
     </tbody>
+    <br />
+    <button class="btn btn-secondary" [routerLink]="['/']">Back</button>
   </table>
 </div>

@@ -1,6 +1,5 @@
 import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CountdownModule } from 'ngx-countdown';
 
@@ -20,6 +19,7 @@ export class BoardHeaderComponent {
   akaCategoryTwo: any = 0;
   aoCategoryOne: any = 0;
   aoCategoryTwo: any = 0;
+  enable: boolean = false;
 
   setTime(seconds: number) {
     this.matchTime = seconds;
@@ -72,7 +72,18 @@ export class BoardHeaderComponent {
     this.scoreAka -= this.scoreAka;
   }
 
-  aoScoreMinus(){
+  aoScoreMinus() {
     this.scoreAo -= this.scoreAo;
+  }
+
+  onClick() {
+    this.enable = true;
+  }
+
+  playSound(){
+    let audio = new Audio();
+    audio.src = "../../../../assets/Yamate.mp3";
+    audio.load();
+    audio.play();
   }
 }

@@ -1,14 +1,17 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-match-stats',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, RouterLink],
   templateUrl: './match-stats.component.html',
   styleUrl: './match-stats.component.scss',
 })
 export class MatchStatsComponent {
+
+
   players = [
     {
       number: 1,
@@ -16,7 +19,7 @@ export class MatchStatsComponent {
       scoreAka: 50,
       playerNameAo: 'Jane Smith',
       scoreAo: 45,
-      winner: ''
+      winner: '',
     },
     {
       number: 2,
@@ -31,6 +34,14 @@ export class MatchStatsComponent {
       playerNameAka: 'Michael White',
       scoreAka: 70,
       playerNameAo: 'Emily Davis',
+      scoreAo: 55,
+      winner: '',
+    },
+    {
+      number: 4,
+      playerNameAka: 'Waqar',
+      scoreAka: 70,
+      playerNameAo: 'Hammad',
       scoreAo: 55,
       winner: '',
     },
