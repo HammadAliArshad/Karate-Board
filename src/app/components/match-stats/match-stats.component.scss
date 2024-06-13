@@ -16,3 +16,12 @@ td, th{
   color: red;
   border: none;
 }
+
+@keyframes tableAnimation{
+  from{width: 55%;}
+  to{width: 70%;}
+}
+
+.table-container{
+  animation: tableAnimation 1s;
+}
