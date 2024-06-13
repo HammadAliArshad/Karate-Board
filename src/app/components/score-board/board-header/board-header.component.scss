@@ -151,8 +151,13 @@ span {
   }
 }
 
-
-
 span > i {
   animation: paneltyButtons 2s;
+}
+
+.hajime:hover, .matte:hover{
+  color: black;
+}
+.hajime:focus, .matte:focus{
+  color: black;
 }
