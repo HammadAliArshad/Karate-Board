@@ -20,7 +20,7 @@ export class BoardHeaderComponent {
   aoCategoryOne: any = 0;
   aoCategoryTwo: any = 0;
   enable: boolean = false;
-
+  history: number[] = [];
 
   setTime(seconds: number) {
     this.matchTime = seconds;
@@ -28,10 +28,12 @@ export class BoardHeaderComponent {
 
   aoScore(aoPoint: number) {
     this.scoreAo += aoPoint;
+    this.history.push(aoPoint);
   }
 
   akaScore(akaPoint: number) {
     this.scoreAka += akaPoint;
+    this.history.push(akaPoint);
   }
 
   categoryOneAka() {
@@ -70,24 +72,30 @@ export class BoardHeaderComponent {
   }
 
   akaScoreMinus() {
-    this.scoreAka -= this.scoreAka;
+    const lastPoint = this.history.pop();
+    if (lastPoint !== undefined) {
+      this.scoreAka -= lastPoint;
+    }
   }
 
   aoScoreMinus() {
-    this.scoreAo -= this.scoreAo;
+    const lastPoint = this.history.pop();
+    if (lastPoint !== undefined) {
+      this.scoreAo -= lastPoint;
+    }
   }
 
   onClick() {
     this.enable = true;
   }
 
-  playSound(){
+  playSound() {
     let audio = new Audio();
-    audio.src = "../../../../assets/Yamate.mp3";
+    audio.src = '../../../../assets/Yamate.mp3';
     audio.play();
   }
 
-  onReset(){
+  onReset() {
     this.enable = false;
     this.akaCategoryOne = 0;
     this.akaCategoryTwo = 0;
