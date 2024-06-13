@@ -84,7 +84,6 @@ export class BoardHeaderComponent {
   playSound(){
     let audio = new Audio();
     audio.src = "../../../../assets/Yamate.mp3";
-    audio.load();
     audio.play();
   }
 
