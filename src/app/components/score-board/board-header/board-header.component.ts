@@ -21,6 +21,7 @@ export class BoardHeaderComponent {
   aoCategoryTwo: any = 0;
   enable: boolean = false;
 
+
   setTime(seconds: number) {
     this.matchTime = seconds;
   }
@@ -85,5 +86,15 @@ export class BoardHeaderComponent {
     audio.src = "../../../../assets/Yamate.mp3";
     audio.load();
     audio.play();
+  }
+
+  onReset(){
+    this.enable = false;
+    this.akaCategoryOne = 0;
+    this.akaCategoryTwo = 0;
+    this.aoCategoryOne = 0;
+    this.aoCategoryTwo = 0;
+    this.scoreAka = 0;
+    this.scoreAo = 0;
   }
 }

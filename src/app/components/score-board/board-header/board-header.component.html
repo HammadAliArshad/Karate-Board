@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-9 d-flex justify-content-center">
+      <!-- Aka Score Section  -->
       <div class="aka-section w-50">
         <h1 class="playerScore">{{ scoreAka }}</h1>
         <button
@@ -11,19 +12,46 @@
         >
           <i class="material-icons">redo</i>
         </button>
-        <section class="panelty" [ngClass]="scoreAka === 0 ? 'mt-5' : 'mt-0'">
-          <button class="categoryAka" (click)="categoryOneAka()">C1</button>
+        <!-- Category 1 Panelty  -->
+        <section [ngClass]="scoreAka === 0 ? 'mt-5' : 'mt-0'">
+          <button
+            class="categoryAka"
+            [disabled]="this.enable == false"
+            (click)="categoryOneAka()"
+          >
+            C1
+          </button>
           <span
-            ><i *ngIf="akaCategoryOne >= 1" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="akaCategoryOne >= 1"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="akaCategoryOne >= 2" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="akaCategoryOne >= 2"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="akaCategoryOne >= 3" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="akaCategoryOne >= 3"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="akaCategoryOne >= 4" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="akaCategoryOne >= 4"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
         </section>
 
@@ -35,27 +63,55 @@
         >
           <i class="material-icons">repeat</i>
         </button>
-
-        <section class="panelty mt-4">
-          <button class="categoryAka" (click)="categoryTwoAka()">C2</button>
+        <!-- Category 2 Panelty  -->
+        <section class="mt-4">
+          <button
+            class="categoryAka"
+            [disabled]="this.enable == false"
+            (click)="categoryTwoAka()"
+          >
+            C2
+          </button>
           <span
-            ><i *ngIf="akaCategoryTwo >= 1" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="akaCategoryTwo >= 1"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="akaCategoryTwo >= 2" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="akaCategoryTwo >= 2"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="akaCategoryTwo >= 3" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="akaCategoryTwo >= 3"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="akaCategoryTwo >= 4" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="akaCategoryTwo >= 4"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
         </section>
+        <!-- Aka Score Buttons  -->
         <section class="score">
           <button
             class="btn btn-primary m-1 mt-4"
             style="background-color: #1e90ff"
             (click)="akaScore(1)"
+            [disabled]="this.enable == false"
           >
             Yuku
           </button>
@@ -66,6 +122,7 @@
             class="btn btn-primary m-1 mt-4"
             style="background-color: #ffd700"
             (click)="akaScore(2)"
+            [disabled]="this.enable == false"
           >
             Wazari
           </button>
@@ -73,11 +130,13 @@
             class="btn btn-primary m-1 mt-4"
             style="background-color: #ff4500"
             (click)="akaScore(3)"
+            [disabled]="this.enable == false"
           >
             Ippon
           </button>
         </section>
       </div>
+      <!-- Count Down  -->
       <div id="stopwatch" class="d-flex justify-content-center">
         <countdown
           class="mt-2"
@@ -88,11 +147,15 @@
         <section class="match-time">
           <p style="margin-left: 5px">Match Time</p>
           <button (click)="setTime(90)" [disabled]="matchTime == 90">90</button>
-          <button (click)="setTime(120)" [disabled]="matchTime == 120">2</button>
-          <button (click)="setTime(180)" [disabled]="matchTime == 180">3</button>
+          <button (click)="setTime(120)" [disabled]="matchTime == 120">
+            2
+          </button>
+          <button (click)="setTime(180)" [disabled]="matchTime == 180">
+            3
+          </button>
         </section>
       </div>
-
+      <!-- Ao Score Section  -->
       <div class="ao-section w-50">
         <h1 class="playerScore">{{ scoreAo }}</h1>
         <button
@@ -103,19 +166,46 @@
         >
           <i class="material-icons">undo</i>
         </button>
-        <section class="panelty" [ngClass]="scoreAo === 0 ? 'mt-5' : 'mt-0'">
-          <button class="categoryAo" (click)="categoryOneAo()">C1</button>
+        <section [ngClass]="scoreAo === 0 ? 'mt-5' : 'mt-0'">
+          <!-- Category 1 Panelty  -->
+          <button
+            class="categoryAo"
+            [disabled]="this.enable == false"
+            (click)="categoryOneAo()"
+          >
+            C1
+          </button>
           <span
-            ><i *ngIf="aoCategoryOne >= 1" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="aoCategoryOne >= 1"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="aoCategoryOne >= 2" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="aoCategoryOne >= 2"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="aoCategoryOne >= 3" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="aoCategoryOne >= 3"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="aoCategoryOne >= 4" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="aoCategoryOne >= 4"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
         </section>
 
@@ -128,26 +218,55 @@
           <i class="material-icons">repeat</i>
         </button>
 
-        <section class="panelty mt-4">
-          <button class="categoryAo" (click)="categoryTwoAo()">C2</button>
+        <section class="mt-4">
+          <!-- Category 2 Panelty  -->
+          <button
+            class="categoryAo"
+            [disabled]="this.enable == false"
+            (click)="categoryTwoAo()"
+          >
+            C2
+          </button>
           <span
-            ><i *ngIf="aoCategoryTwo >= 1" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="aoCategoryTwo >= 1"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="aoCategoryTwo >= 2" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="aoCategoryTwo >= 2"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="aoCategoryTwo >= 3" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="aoCategoryTwo >= 3"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
           <span
-            ><i *ngIf="aoCategoryTwo >= 4" class="material-icons">&#xe876;</i>
+            ><i
+              class="panelty"
+              *ngIf="aoCategoryTwo >= 4"
+              class="material-icons"
+              >&#xe876;</i
+            >
           </span>
         </section>
         <section class="score">
+          <!-- Ao Score Buttons  -->
           <button
             class="btn btn-primary m-1 mt-4"
             style="background-color: #1e90ff"
             (click)="aoScore(1)"
+            [disabled]="this.enable == false"
           >
             Yuku
           </button>
@@ -155,6 +274,7 @@
             class="btn btn-primary m-1 mt-4"
             style="background-color: #ffd700"
             (click)="aoScore(2)"
+            [disabled]="this.enable == false"
           >
             Wazari
           </button>
@@ -162,12 +282,14 @@
             class="btn btn-primary m-1 mt-4"
             style="background-color: #ff4500"
             (click)="aoScore(3)"
+            [disabled]="this.enable == false"
           >
             Ippon
           </button>
         </section>
       </div>
       <section class="footer d-flex col-7 justify-content-center">
+        <!-- Footer Buttons  -->
         <div class="left-btn">
           <button class="btn btn-secondary" [routerLink]="['']">Back</button>
         </div>
@@ -176,15 +298,15 @@
             class="btn btn-dark"
             style="background-color: #32cd32"
             (click)="cd.begin()"
-            (dblclick)="onClick()"
+            (focus)="onClick()"
           >
             Hajime
           </button>
           <button
             class="btn btn-success"
             style="background-color: #ffd700"
+            (focus)="playSound()"
             (click)="cd.pause()"
-            (dblclick)="playSound()"
             [disabled]="this.enable == false"
           >
             Matte
@@ -194,6 +316,7 @@
           <button
             class="btn btn-secondary"
             style="background-color: #ffa500"
+            (focus)="onReset()"
             (click)="cd.restart()"
           >
             Reset

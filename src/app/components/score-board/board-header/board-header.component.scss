@@ -29,7 +29,6 @@
   position: absolute;
   font-size: 70px;
   color: white;
-
 }
 
 #stopwatch {
@@ -70,11 +69,12 @@
 }
 
 span {
-  margin-right: 40px;
-  padding: 10px;
+  margin-right: 60px;
 
-  i{
+  i {
     position: fixed;
+    padding: 6px;
+    border-radius: 5px;
   }
 }
 
@@ -102,44 +102,57 @@ span {
   }
 }
 
-.resetPanelty{
+.resetPanelty {
   border: none;
   position: absolute;
   margin-left: 140px;
   background-color: transparent;
 }
 
-.btn-dark{
+.btn-dark {
   background-color: transparent;
   padding: 5px;
   justify-content: center;
   border: none;
 }
 
-.btn-dark:focus{
+.btn-dark:focus {
   background-color: transparent;
 }
 
-@keyframes scoreBoard{
-  from{width: 50%;}
-  to{width: 100%;}
+@keyframes scoreBoard {
+  from {
+    width: 50%;
+  }
+  to {
+    width: 100%;
+  }
 }
 
-// span:hover{
-//     animation: paneltyButtons 2s;
-// }
-
-.row{
+.row {
   animation: scoreBoard 1s;
 }
 
-// @keyframes paneltyButtons{
-//   from{background-color: gray;}
-//   to{background-color: transparent;}
-// }
+@keyframes paneltyButtons {
+  from {
+    background-color: rgb(255, 31, 31);
+  }
+  to {
+    background-color: transparent;
+  }
+  from {
+    color: transparent;
+  }
+  to {
+    color: white;
+  }
+    from {
+    font-weight: bolder;
+  }
+}
 
 
 
-
-
-
+span > i {
+  animation: paneltyButtons 2s;
+}
