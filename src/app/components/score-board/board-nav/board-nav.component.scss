@@ -10,17 +10,24 @@ span{
     background-color: transparent;
 }
 
-.center{
+.container{
     margin-top: 60px;
 }
 
 @keyframes scoreBoard{
-  from{width: 50%;}
+  from{width: 30%;}
   to{width: 100%;}
 }
 
-.center{
-  animation: scoreBoard 1s;
+.container{
+  animation: scoreBoard 2s;
+}
+.saveButton{
+  margin-left: 150%;
+}
+.btn-danger{
+  border-radius: 10px;
+
 }
 
 

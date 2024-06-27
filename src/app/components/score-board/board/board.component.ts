@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BoardNavComponent } from '../board-nav/board-nav.component';
 import { BoardHeaderComponent } from '../board-header/board-header.component';
+import { ScoreCard } from '../../../models/scorecard.model';
 
 @Component({
   selector: 'app-board',

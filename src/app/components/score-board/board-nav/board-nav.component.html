@@ -1,4 +1,4 @@
-<div class="center">
+<div class="container">
   <div class="row justify-content-center">
     <div class="input-group mb-3 w-25">
       <span
@@ -12,8 +12,8 @@
         maxlength="15"
         class="form-control border-0 shadow-none"
         placeholder="Write the Aka Name here"
-        aria-label="Username"
-        aria-describedby="basic-addon1"
+        name="akaName"
+        [(ngModel)]="Scorecard.akaName"
       />
     </div>
     <div class="input-group mb-3 w-25">
@@ -28,9 +28,14 @@
         maxlength="15"
         class="form-control border-0 shadow-none"
         placeholder="Write the Ao Name here"
-        aria-label="Username"
-        aria-describedby="basic-addon1"
+        name="aoName"
+        [(ngModel)]="Scorecard.aoName"
+
+        
       />
+      <div class="saveButton">
+        <button class="btn btn-danger" (click)="onSave()">Finish</button>
+      </div>
     </div>
   </div>
 </div>

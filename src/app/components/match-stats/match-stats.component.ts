@@ -1,6 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ScoreCard } from '../../models/scorecard.model';
 
 @Component({
   selector: 'app-match-stats',
@@ -10,41 +11,25 @@ import { RouterLink } from '@angular/router';
   styleUrl: './match-stats.component.scss',
 })
 export class MatchStatsComponent {
+  stats: ScoreCard[] = [];
 
+  constructor() {}
 
-  players = [
-    {
-      number: 1,
-      playerNameAka: 'John Doe',
-      scoreAka: 50,
-      playerNameAo: 'Jane Smith',
-      scoreAo: 45,
-      winner: '',
-    },
-    {
-      number: 2,
-      playerNameAka: 'Alice Brown',
-      scoreAka: 30,
-      playerNameAo: 'Bob Johnson',
-      scoreAo: 60,
-      winner: '',
-    },
-    {
-      number: 3,
-      playerNameAka: 'Michael White',
-      scoreAka: 70,
-      playerNameAo: 'Emily Davis',
-      scoreAo: 55,
-      winner: '',
-    },
-    {
-      number: 4,
-      playerNameAka: 'Waqar',
-      scoreAka: 70,
-      playerNameAo: 'Hammad',
-      scoreAo: 55,
-      winner: '',
-    },
-    // Add more players as needed
-  ];
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    const localStats = localStorage.getItem('stats');
+    if (localStats != null) {
+      this.stats = JSON.parse(localStats);
+    }
+  }
+
+  onDelete(id: number) {
+    for (let i = 0; i < this.stats.length; i++) {
+      if (this.stats[i].id == id) {
+        this.stats.splice(i, 1);
+      }
+    }
+    localStorage.setItem('stats', JSON.stringify(this.stats));
+  }
 }

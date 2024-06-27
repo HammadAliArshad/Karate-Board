@@ -12,20 +12,23 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let player of players">
-        <td>{{ player.number }}</td>
-        <td>{{ player.playerNameAka }}</td>
-        <td>{{ player.scoreAka }}</td>
-        <td>{{ player.playerNameAo }}</td>
-        <td>{{ player.scoreAo }}</td>
-        <td *ngIf="player.scoreAka > player.scoreAo">
-          {{ player.playerNameAka }}
+      <tr *ngFor="let stat of stats">
+        <td>{{ stat.id }}</td>
+        <td>{{ stat.akaName }}</td>
+        <td>{{ stat.akaScore }}</td>
+        <td>{{ stat.aoName }}</td>
+        <td>{{ stat.aoScore }}</td>
+        <td *ngIf="stat.akaScore > stat.aoScore">
+          {{ stat.akaName }}
         </td>
-        <td *ngIf="player.scoreAka < player.scoreAo">
-          {{ player.playerNameAo }}
+        <td *ngIf="stat.akaScore < stat.aoScore">
+          {{ stat.aoName }}
+        </td>
+        <td *ngIf="stat.akaScore == stat.aoScore">
+          Draw
         </td>
         <td>
-          <button class="delete"><i class="material-icons">delete</i></button>
+          <button class="delete" (click)="onDelete(stat.id)"><i class="material-icons">delete</i></button>
         </td>
       </tr>
     </tbody>

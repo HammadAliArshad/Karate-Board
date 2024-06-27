@@ -1,7 +1,8 @@
 import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CountdownModule } from 'ngx-countdown';
+import { ScoreCard } from '../../../models/scorecard.model';
 
 @Component({
   selector: 'app-board-header',
@@ -11,6 +12,8 @@ import { CountdownModule } from 'ngx-countdown';
   styleUrl: './board-header.component.scss',
 })
 export class BoardHeaderComponent {
+  @Input() stats: ScoreCard[] = [];
+
   scoreAka: any = 0;
   scoreAo: any = 0;
   matchTime: any = 180;
@@ -21,6 +24,8 @@ export class BoardHeaderComponent {
   aoCategoryTwo: any = 0;
   enable: boolean = false;
   history: number[] = [];
+
+
 
   setTime(seconds: number) {
     this.matchTime = seconds;

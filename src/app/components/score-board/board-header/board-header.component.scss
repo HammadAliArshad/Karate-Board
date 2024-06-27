@@ -122,15 +122,15 @@ span {
 
 @keyframes scoreBoard {
   from {
-    width: 50%;
+    width: 55%;
   }
   to {
     width: 100%;
   }
 }
 
-.row {
-  animation: scoreBoard 1s;
+.container {
+  animation: scoreBoard 2s;
 }
 
 @keyframes paneltyButtons {
@@ -146,7 +146,7 @@ span {
   to {
     color: white;
   }
-    from {
+  from {
     font-weight: bolder;
   }
 }
@@ -155,9 +155,24 @@ span > i {
   animation: paneltyButtons 2s;
 }
 
-.hajime:hover, .matte:hover{
+.hajime:hover,
+.matte:hover {
   color: black;
 }
-.hajime:focus, .matte:focus{
+.hajime:focus,
+.matte:focus {
   color: black;
+}
+
+@keyframes footerAnimation {
+  from {
+    width: 30%;
+  }
+  to {
+    width: 58%;
+  }
+}
+
+.footer{
+  animation: footerAnimation 2s;
 }
