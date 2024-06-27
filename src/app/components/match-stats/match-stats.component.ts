@@ -1,7 +1,8 @@
 import { NgFor, NgIf } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ScoreCard } from '../../models/scorecard.model';
+import { StatsService } from '../../sevices/stats.service';
 
 @Component({
   selector: 'app-match-stats',
@@ -13,7 +14,8 @@ import { ScoreCard } from '../../models/scorecard.model';
 export class MatchStatsComponent {
   stats: ScoreCard[] = [];
 
-  constructor() {}
+  
+  constructor(private statsService: StatsService) {}
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -25,11 +27,6 @@ export class MatchStatsComponent {
   }
 
   onDelete(id: number) {
-    for (let i = 0; i < this.stats.length; i++) {
-      if (this.stats[i].id == id) {
-        this.stats.splice(i, 1);
-      }
-    }
-    localStorage.setItem('stats', JSON.stringify(this.stats));
+    this.statsService.deleteStats(id);
   }
 }

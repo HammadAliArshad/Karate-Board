@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ScoreCard } from '../../../models/scorecard.model';
+import { StatsService } from '../../../sevices/stats.service';
 
 @Component({
   selector: 'app-board-nav',
@@ -18,13 +19,11 @@ export class BoardNavComponent {
     aoName: '',
     aoScore: 0,
   };
-  constructor() {}
+  constructor(private statsService: StatsService ) {}
 
   onSave() {      
-      this.Scorecard.id = this.stats.length + 1;
-      this.stats.push(this.Scorecard);
-      console.log(this.stats);
-      localStorage.setItem('stats' , JSON.stringify(this.stats));
+      this.Scorecard.id = this.statsService.getStats().length + 1;
+      this.statsService.addName(this.Scorecard);
       this.Scorecard = {
         id: 0,
         akaName: '',
