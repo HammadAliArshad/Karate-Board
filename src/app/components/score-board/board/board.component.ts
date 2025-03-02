@@ -7,7 +7,7 @@ import { ScoreCard } from '../../../models/scorecard.model';
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [RouterOutlet, BoardNavComponent, BoardHeaderComponent],
+  imports: [ BoardHeaderComponent],
   templateUrl: './board.component.html',
   styleUrl: './board.component.scss'
 })

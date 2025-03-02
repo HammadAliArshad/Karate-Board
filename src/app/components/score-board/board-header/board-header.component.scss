@@ -1,3 +1,38 @@
+//Nav Style
+input{
+    background-color: transparent;
+}
+
+input::placeholder{
+    color: white;
+}
+
+.navspan{
+    background-color: transparent;
+}
+
+.container{
+    margin-top: 60px;
+}
+
+@keyframes scoreBoard{
+  from{width: 30%;}
+  to{width: 100%;}
+}
+
+.container{
+  animation: scoreBoard 2s;
+}
+.saveButton{
+  margin-left: 150%;
+}
+.btn-danger{
+  border-radius: 10px;
+
+}
+
+
+//Header Style
 .aka-section {
   background-color: #8b0000;
   color: white;
@@ -68,7 +103,7 @@
   margin-right: 20px;
 }
 
-span {
+.headerspan {
   margin-right: 60px;
 
   i {

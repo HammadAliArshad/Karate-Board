@@ -1,3 +1,46 @@
+<!-- <app-board-nav></app-board-nav> -->
+  <!-- <app-board-nav></app-board-nav> -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="input-group mb-3 w-25">
+      <span
+        class="input-group-text border-0 navspan"
+        style="color: red"
+        id="basic-addon1"
+        >Aka</span
+      >
+      <input
+        type="text"
+        maxlength="15"
+        class="form-control border-0 shadow-none"
+        placeholder="Write the Aka Name here"
+        name="akaName"
+        [(ngModel)]="Scorecard.akaName"
+      />
+    </div>
+    <div class="input-group mb-3 w-25">
+      <span
+        class="input-group-text border-0 navspan"
+        style="color: blue"
+        id="basic-addon1"
+        >Ao</span
+      >
+      <input
+        type="text"
+        maxlength="15"
+        class="form-control border-0 shadow-none"
+        placeholder="Write the Ao Name here"
+        name="aoName"
+        [(ngModel)]="Scorecard.aoName"  
+      />
+      <div class="saveButton">
+        <!-- <button class="btn btn-danger" (click)="onSave()">Finish</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-9 d-flex justify-content-center">
@@ -21,7 +64,7 @@
           >
             C1
           </button>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="akaCategoryOne >= 1"
@@ -29,7 +72,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="akaCategoryOne >= 2"
@@ -37,7 +80,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="akaCategoryOne >= 3"
@@ -45,7 +88,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="akaCategoryOne >= 4"
@@ -72,7 +115,7 @@
           >
             C2
           </button>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="akaCategoryTwo >= 1"
@@ -80,7 +123,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="akaCategoryTwo >= 2"
@@ -88,7 +131,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="akaCategoryTwo >= 3"
@@ -96,7 +139,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="akaCategoryTwo >= 4"
@@ -175,7 +218,7 @@
           >
             C1
           </button>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="aoCategoryOne >= 1"
@@ -183,7 +226,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="aoCategoryOne >= 2"
@@ -191,7 +234,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="aoCategoryOne >= 3"
@@ -199,7 +242,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="aoCategoryOne >= 4"
@@ -227,7 +270,7 @@
           >
             C2
           </button>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="aoCategoryTwo >= 1"
@@ -235,7 +278,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="aoCategoryTwo >= 2"
@@ -243,7 +286,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="aoCategoryTwo >= 3"
@@ -251,7 +294,7 @@
               >&#xe876;</i
             >
           </span>
-          <span
+          <span class="headerspan"
             ><i
               class="panelty"
               *ngIf="aoCategoryTwo >= 4"

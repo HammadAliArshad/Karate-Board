@@ -1,21 +1,40 @@
 import { NgClass, NgFor, NgIf, NgStyle } from '@angular/common';
-import { Component, EventEmitter, Input, Output, inject, output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  inject,
+  output,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CountdownModule } from 'ngx-countdown';
 import { ScoreCard } from '../../../models/scorecard.model';
+import Swal from 'sweetalert2';
+import { StatsService } from '../../../sevices/stats.service';
+import { BoardNavComponent } from "../board-nav/board-nav.component";
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-board-header',
   standalone: true,
-  imports: [CountdownModule, RouterLink, NgIf, NgClass, NgStyle],
+  imports: [
+    CountdownModule,
+    RouterLink,
+    NgIf,
+    NgClass,
+    NgStyle,
+    FormsModule
+  ],
   templateUrl: './board-header.component.html',
   styleUrl: './board-header.component.scss',
 })
 export class BoardHeaderComponent {
-  @Input() stats: ScoreCard[] = [];
+  stats: ScoreCard[] = [];
 
-  scoreAka: any = 0;
-  scoreAo: any = 0;
+  @Output() scoreAka: any = 0;
+  @Output() scoreAo: any = 0;
+
   matchTime: any = 180;
   currentFoul: any = 0;
   akaCategoryOne: any = 0;
@@ -25,7 +44,15 @@ export class BoardHeaderComponent {
   enable: boolean = false;
   history: number[] = [];
 
-
+  constructor(private statsService: StatsService) {}
+  // stats: ScoreCard[] = [];
+  Scorecard: any = {
+    id: 0,
+    akaName: '',
+    akaScore: 0,
+    aoName: '',
+    aoScore: 0,
+  };
 
   setTime(seconds: number) {
     this.matchTime = seconds;
@@ -34,15 +61,21 @@ export class BoardHeaderComponent {
   aoScore(aoPoint: number) {
     this.scoreAo += aoPoint;
     this.history.push(aoPoint);
+    // this.scoreAo.emit(this.history);
+    this.statsService.addScore(this.scoreAo);
   }
 
   akaScore(akaPoint: number) {
     this.scoreAka += akaPoint;
     this.history.push(akaPoint);
+
+    this.statsService.addScore(this.scoreAka);
+    console.table(this.statsService.getStats());
   }
 
   categoryOneAka() {
     this.akaCategoryOne += 1;
+
     if (this.akaCategoryOne > 4) {
       this.akaCategoryOne -= this.akaCategoryOne;
     }
@@ -101,12 +134,29 @@ export class BoardHeaderComponent {
   }
 
   onReset() {
-    this.enable = false;
-    this.akaCategoryOne = 0;
-    this.akaCategoryTwo = 0;
-    this.aoCategoryOne = 0;
-    this.aoCategoryTwo = 0;
-    this.scoreAka = 0;
-    this.scoreAo = 0;
+    Swal.fire({
+      title: 'Do you want to Reset Score?',
+      showDenyButton: true,
+      background: "black",
+      showCancelButton: true,
+      confirmButtonText: 'Save Score',
+      denyButtonText: `Don't save`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire('Saved!', '', 'success');
+            this.enable = false;
+            this.akaCategoryOne = 0;
+            this.akaCategoryTwo = 0;
+            this.aoCategoryOne = 0;
+            this.aoCategoryTwo = 0;
+            this.scoreAka = 0;
+            this.scoreAo = 0;
+            this.matchTime = 0;
+      } else if (result.isDenied) {
+        Swal.fire('Score are not saved', '', 'info');
+      }
+    });
+
   }
 }

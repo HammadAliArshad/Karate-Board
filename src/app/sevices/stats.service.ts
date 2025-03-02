@@ -18,8 +18,18 @@ export class StatsService {
   //   }
   // }
 
+  addStats(vm:ScoreCard){
+    this.stats.push(vm);
+    localStorage.setItem('stats', JSON.stringify(this.stats))
+  }
+
   addName(name: ScoreCard) {
     this.stats.push(name);
+    localStorage.setItem('stats', JSON.stringify(this.stats));
+  }
+
+  addScore(score: ScoreCard) {
+    this.stats.push(score);
     localStorage.setItem('stats', JSON.stringify(this.stats));
   }
 
